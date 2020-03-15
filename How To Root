@@ -1,0 +1,44 @@
+This file assumes you are starting with an OOTB(Out Of The Box Tablet) if you are not skip step 0.
+Step 0 Set up the tablet for the first time:
+--My personal preference is to create an email for that specific tablet(So I don't get mail from and about the tablet normally)
+--The next steps are easier if you do not set a password to begin with
+Step 1 Download twrp to computer:
+--Correct version is 3.3.1
+--Link: https://dl.twrp.me/vince/twrp-3.3.1-0-vince.img.html
+--Keep this file on hand for later
+Step 2 Unlock the bootloader:
+--Enable Dev mode on tablet
+---System->About Tablet->Tap the build # until it says you're a dev
+---Go to dev settings(Newly avaliable)
+---enable usb debugging
+--Connect device to PC
+--It may ask you to enable usb debugging, select always allow
+--Open a Command Prompt
+****WARNING: THIS WILL WIPE YOUR DEVICE, PLEASE TRANSFER ANY DATA YOU DON'T WANT TO SEE BRUTALLY MURDERED OFF OF THE DEVICE****
+--Issue commands as follows:
+---adb devices
+---adb reboot bootloader
+---fastboot flashing unlock
+--Follow the promts and select yes
+--tablet should reboot, wiped, with an unlocked bootloader
+--Repeat Step 0
+Step 3 Download Magisk Manager on the tablet:
+--Newest Version
+--Link: https://magiskmanager.com/
+Step 4 Download Magisk Zip:
+--Open Magisk Manager
+--It should inform you that magisk zip has not been installed
+--download the zip to a place you can remember
+Step 5 Flash twrp and install magisk.zip:
+--Issue commands as follows:
+---fastboot flash recovery **twrp.img file name**
+--Once in twrp select install, then install magisk.zip
+--reboot
+Step 5 Congrats:
+--You should now have a selective root availiable when you launch magisk
+--Happy Customizing!
+
+This method was last tested by Byte on:  March 11 2019.
+If you have any questions or if I have missed something please feel free to comment. I will try to answer all questions :)
+
+
