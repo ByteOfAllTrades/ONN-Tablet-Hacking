@@ -1,16 +1,32 @@
+**************************************
+*            IMPORTANT NOTE          *
+*DO NOT TRY THIS WITH THE 7' VARIANT *
+*If you try and flash one of these   *
+*recoveries, either                   *
+* A. It will reboot normally without  *
+*recovery                             *
+*B. It will die, permanently as of yet*
+*Be safe friends!                      *
+***************************************
+
 This file assumes you are starting with an OOTB(Out Of The Box Tablet) if you are not skip step 0.
 Step 0 Set up the tablet for the first time:
 --My personal preference is to create an email for that specific tablet(So I don't get mail from and about the tablet normally)
 --The next steps are easier if you do not set a password to begin with
 Step 1 Download twrp to computer:
---Correct version is 3.3.1
---Link: https://dl.twrp.me/vince/twrp-3.3.1-0-vince.img.html
+---I Did not create this twrp image, I found it here https://forum.xda-developers.com/walmart-onn-tablets/walmart-onn-tablets-general/recovery-twrp-onn-android-tablets-t3999621
+--Correct version is:
+---ONA19TB002 - Onn 8" model
+---ONA19TB003 - Onn 10.1" model
+---ONA19TB007 - Onn 10.1" w/keyboard model
+---Files are in repo
 --Keep this file on hand for later
 Step 2 Unlock the bootloader:
 --Enable Dev mode on tablet
 ---System->About Tablet->Tap the build # until it says you're a dev
 ---Go to dev settings(Newly avaliable)
 ---enable usb debugging
+---enable OEM Unlocking
 --Connect device to PC
 --It may ask you to enable usb debugging, select always allow
 --Open a Command Prompt
@@ -21,6 +37,7 @@ Step 2 Unlock the bootloader:
 ---fastboot flashing unlock
 --Follow the promts and select yes
 --tablet should reboot, wiped, with an unlocked bootloader
+--Easy way to tell is that the tablet will have a message that says Orange State
 --Repeat Step 0
 Step 3 Download Magisk Manager on the tablet:
 --Newest Version
@@ -31,14 +48,18 @@ Step 4 Download Magisk Zip:
 --download the zip to a place you can remember
 Step 5 Flash twrp and install magisk.zip:
 --Issue commands as follows:
+---adb devices
+---adb reboot bootloader
 ---fastboot flash recovery **twrp.img file name**
+---fastboot oem reboot recovery
 --Once in twrp select install, then install magisk.zip
 --reboot
 Step 5 Congrats:
 --You should now have a selective root availiable when you launch magisk
 --Happy Customizing!
 
-This method was last tested by Byte on:  March 11 2019.
-If you have any questions or if I have missed something please feel free to comment. I will try to answer all questions :)
-.
+Test Logs:
+ONN 10.1 W/Keyboard: March 11 2020 - Success - "All went according to plan, made a nethunter :)"
+ONN 7" March 17 2020 - Failiure - "This tablet is incompatible with any current version of twrp, in trying to find one that was, I broke it"
 
+If you have any questions or if I have missed something please feel free to comment. :)
