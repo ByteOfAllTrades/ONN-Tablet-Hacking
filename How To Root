@@ -43,17 +43,15 @@ Step 2 Unlock the bootloader:
 --Repeat Step 0
 Step 3 Download Magisk Manager on the tablet:
 --Newest Version
---Link: https://magiskmanager.com/
-Step 4 Download Magisk Zip:
---Open Magisk Manager
---It should inform you that magisk zip has not been installed
---download the zip to a place you can remember
+--Link: https://github.com/topjohnwu/Magisk/releases
+Step 4 Make Magisk Zip:
+--After installing magisk, you should rename the apk so that it is a zip file
 Step 5 Flash twrp and install magisk.zip:
 --Issue commands as follows:
 ---adb devices
 ---adb reboot bootloader
 ---fastboot flash recovery **twrp.img file name**
----fastboot oem reboot recovery
+---fastboot oem reboot-recovery
 --Once in twrp select install, then install magisk.zip
 --reboot
 Step 5 Congrats:
